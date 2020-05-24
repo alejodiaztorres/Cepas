@@ -21,6 +21,18 @@
     <%= form.number_field :score %>
   </div>
 
+  <div class="field">
+    <%= form.label :Cepas %>
+      <%= form.collection_check_boxes(:strain_ids,Strain.where(available:true),
+      :id,
+      :name) do |b| %>
+      <%= b.label class:"label-checkbox" do%>
+      <%=b.check_box + b.text%>
+      <%end%>
+      <% end %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
