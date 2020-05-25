@@ -69,6 +69,6 @@ class WinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def wine_params
-      params.require(:wine).permit(:name, :score, strain_ids: [])
+      params.require(:wine).permit(:name,  :qualification, strain_ids: [], oenologist_ids: [])
     end
 end

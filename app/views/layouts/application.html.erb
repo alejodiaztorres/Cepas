@@ -10,6 +10,43 @@
   </head>
 
   <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    
+
+    <p class="control">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Vinos',  wines_path, class: "button text-white" %>
+      </li>
+    </ul>
+    </p>
+    
+    <p class="control">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Cepas',  strains_path, class: "button text-white" %>
+      </li>
+    </ul>
+    </p>
+
+    <p class="control">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Revistas',  magazines_path, class: "button text-white" %>
+      </li>
+    </ul>
+    </p>
+
+     <p class="control">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Enólogos',  oenologists_path, class: "button text-white" %>
+      </li>
+    </ul>
+    </p>
+  </nav>
+
     <%= yield %>
   </body>
 </html>
