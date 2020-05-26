@@ -9,7 +9,6 @@
       <th>Edad</th>
       <th>Nacionalidad</th>
       <th>Revista</th>
-      <th>Cargo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,7 +20,6 @@
         <td><%= oenologist.age %></td>
         <td><%= oenologist.nationality %></td>
         <td><%= oenologist.magazines.order(:name).map(&:name).join(', ') %></td>
-        <td><%= oenologist.magazines.order(:position).map(&:position).join(', ') %></td>
         <td><%= link_to 'Show', oenologist %></td>
         <td><%= link_to 'Edit', edit_oenologist_path(oenologist) %></td>
         <td><%= link_to 'Destroy', oenologist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
