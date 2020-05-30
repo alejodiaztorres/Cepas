@@ -9,44 +9,61 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body>  
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+   <% if current_user %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top ">
+
+    <p class="control">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Vinos',  wines_path, class: "button text-white" %>
+        </li>
+      </ul>
+      </p>
+      
+      <p class="control">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Cepas',  strains_path, class: "button text-white" %>
+        </li>
+      </ul>
+      </p>
+
+      <p class="control">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Revistas',  magazines_path, class: "button text-white" %>
+        </li>
+      </ul>
+      </p>
+
+      <p class="control">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Enólogos',  oenologists_path, class: "button text-white" %>
+        </li>
+      </ul>
+      </p>
+
+
+      <p class="control">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: "button text-white"%>
+        </li>
+      </ul>
+      </p>
+
     
+    </nav>
 
-    <p class="control">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Vinos',  wines_path, class: "button text-white" %>
-      </li>
-    </ul>
-    </p>
-    
-    <p class="control">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Cepas',  strains_path, class: "button text-white" %>
-      </li>
-    </ul>
-    </p>
+    <% else %>
 
-    <p class="control">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Revistas',  magazines_path, class: "button text-white" %>
-      </li>
-    </ul>
-    </p>
+      <%= link_to 'Registrarse', new_user_registration_path%>
 
-     <p class="control">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to 'Enólogos',  oenologists_path, class: "button text-white" %>
-      </li>
-    </ul>
-    </p>
-  </nav>
-
-    <%= yield %>
+      <%= link_to 'Iniciar sesión', new_user_session_path%> 
+  <% end %>
+  <%= yield %>
   </body>
 </html>

@@ -1,5 +1,6 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_admin!, except: [:index]
 
   # GET /wines
   # GET /wines.json
